@@ -1,0 +1,13 @@
+To run the project clone/download the project
+
+open terminal and run "npm install"
+
+Requirements
+Angular latest version
+Node latest Version
+
+on start of the application it will fetch card data from the API.
+user has to click distribute card to evenly distribute the cards.
+
+next card: to view your next card
+play my card: to play your card with selected parameter
