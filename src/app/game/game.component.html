@@ -1,0 +1,65 @@
+<mat-toolbar class="mat-elevation-z2 header">
+  <mat-toolbar-row>
+    <span>Top Trump</span>
+    <button mat-raised-button class="BTNreset" (click)="onStartNewGame()">Distribute Cards</button>
+    <button  mat-raised-button class="BTNreset" (click)="newGame()">New Game</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div *ngIf="usersTopCard" class="basic-container">
+  <div class="mat-elevation-z2 card card-1">
+    <div class="img">
+      Your Top Card
+    </div>
+    <div class="title">
+      <b>Name : {{usersTopCard.name}}</b>
+    </div>
+    <div class="title">
+      <b>Highest Wins : {{usersTopCard.cost_in_credits}}</b>
+    </div>
+    <div class="title">
+      <b>HyperDrive : {{usersTopCard.hyperdrive_rating}}</b>
+    </div>
+    <div class="title">
+      <b>Top Speed : {{usersTopCard.max_atmosphering_speed}}</b>
+    </div>
+    <div class="title">
+      <mat-form-field>
+        <mat-select [(value)]="selected">
+          <mat-option selected value="cost_in_credits">Highest Wins</mat-option>
+          <mat-option value="hyperdrive_rating">HyperDrive</mat-option>
+          <mat-option value="max_atmosphering_speed">Top Speed</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button *ngIf="usersTopCard" mat-raised-button class="BTNreset" (click)="userPlay()">Play my card</button>
+    </div>
+    <div class="title">
+      <b>Cards in Hand : {{cardsCountUser}}</b>
+    </div>
+  </div>
+</div>
+<div class="card card-1">
+  {{msg}}
+  <button *ngIf="usersTopCard" mat-raised-button class="BTNreset" (click)="newCards()">Next Card</button>
+</div>
+<div class="basic-container">
+  <div class="card card-1">
+    <div class="img">
+      Computers Top Card
+    </div>
+    <div class="title">
+      <b>Name : {{computersTopCard.name}}</b>
+    </div>
+    <div class="title">
+      <b>Highest Wins : {{computersTopCard.cost_in_credits}}</b>
+    </div>
+    <div class="title">
+      <b>HyperDrive : {{computersTopCard.hyperdrive_rating}}</b>
+    </div>
+    <div class="title">
+      <b>Top Speed : {{computersTopCard.max_atmosphering_speed}}</b>
+    </div>
+    <div class="title">
+      <b>Cards in Hand : {{cardsCountComputer}}</b>
+    </div>
+  </div>
+</div>
